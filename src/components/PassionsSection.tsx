@@ -84,21 +84,6 @@ export function PassionsSection() {
             )
           })}
         </motion.div>
-
-        <motion.div
-          className="mt-16 flex flex-col items-center gap-3 text-sm text-dusk/70"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-        >
-          <span className="rounded-full border border-dusk/10 bg-canvas px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-dusk/70">
-            Easter Egg
-          </span>
-          <p>
-            Hover over “Ironman 70.3” to see the finisher glow — a quiet nod to the medal moments that fuel the next build.
-          </p>
-        </motion.div>
       </div>
     </section>
   )

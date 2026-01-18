@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { Github, Linkedin, Mail } from 'lucide-react'
 
 type NavItem = {
   label: string
@@ -49,9 +50,6 @@ export function Navigation() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <div className="flex w-full max-w-5xl items-center justify-between rounded-full border border-dusk/10 bg-canvas/90 px-6 py-3 shadow-subtle backdrop-blur">
-        <a href="#top" className="font-display text-sm tracking-[0.2em] uppercase text-dusk/80">
-          Brayden Thompson
-        </a>
         <nav className="hidden gap-2 text-sm sm:flex">
           {navItems.map((item) => {
             const isActive = active === item.target
@@ -73,12 +71,33 @@ export function Navigation() {
             )
           })}
         </nav>
-        <a
-          href="mailto:brdthompson02@gmail.com"
-          className="rounded-full border border-dusk/15 bg-dusk text-xs font-semibold uppercase tracking-[0.18em] text-canvas transition hover:bg-ember hover:text-dusk"
-        >
-          <span className="block px-4 py-2">Say hi</span>
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href="https://www.linkedin.com/in/brayden-thompson"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full border border-dusk/15 p-2 text-dusk/70 transition hover:border-dusk/40 hover:text-dusk"
+            aria-label="LinkedIn"
+          >
+            <Linkedin className="h-4 w-4" />
+          </a>
+          <a
+            href="https://github.com/bthomp89"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full border border-dusk/15 p-2 text-dusk/70 transition hover:border-dusk/40 hover:text-dusk"
+            aria-label="GitHub"
+          >
+            <Github className="h-4 w-4" />
+          </a>
+          <a
+            href="mailto:brdthompson02@gmail.com"
+            className="inline-flex items-center justify-center rounded-full border border-dusk/15 p-2 text-dusk/70 transition hover:border-dusk/40 hover:text-dusk"
+            aria-label="Email"
+          >
+            <Mail className="h-4 w-4" />
+          </a>
+        </div>
       </div>
     </motion.header>
   )
