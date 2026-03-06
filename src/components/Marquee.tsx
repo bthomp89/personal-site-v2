@@ -2,6 +2,7 @@ import western from '../assets/western_eng_new.png'
 import canadianTire from '../assets/canadian-tire-fs.jpg'
 import ibm from '../assets/ibm.jpeg'
 import manulife from '../assets/manulife.png'
+import pgcwi from '../assets/pgcwi.png'
 import mosaic from '../assets/mosaic.png'
 
 const LOGOS = [
@@ -9,6 +10,7 @@ const LOGOS = [
   { name: 'Canadian Tire FS', file: canadianTire, height: 40,  href: 'https://www.linkedin.com/company/canadian-tire-financial-services/' },
   { name: 'IBM',              file: ibm,          height: 40,  href: 'https://www.linkedin.com/company/ibm/' },
   { name: 'Manulife',         file: manulife,     height: 40,  href: 'https://www.linkedin.com/company/manulife-financial/' },
+  { name: 'PGCWI',            file: pgcwi,        height: 40,  href: 'https://www.pgcwi.com/' },
   { name: 'Ask-AI',           file: mosaic,       height: 90,  href: 'https://www.linkedin.com/company/mosaic-by-ask-ai/' },
 ]
 
