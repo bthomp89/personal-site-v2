@@ -1,105 +1,96 @@
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { Moon, Sun } from 'lucide-react'
+import headshot from '../assets/headshot.jpg'
 
-type NavItem = {
-  label: string
-  target: string
+interface Props {
+  dark: boolean
+  onToggle: () => void
 }
 
-const navItems: NavItem[] = [
-  { label: 'About', target: '#about' },
-  { label: 'Career', target: '#career' },
-  { label: 'Projects', target: '#projects' },
-  { label: 'Passions', target: '#passions' },
-]
-
-export function Navigation() {
-  const [active, setActive] = useState<string>('')
+export function Navigation({ dark, onToggle }: Props) {
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.innerHeight / 3
-      const sections = navItems
-        .map(({ target }) => document.querySelector<HTMLElement>(target))
-        .filter(Boolean) as HTMLElement[]
-
-      for (const section of sections) {
-        const rect = section.getBoundingClientRect()
-        if (rect.top <= offset && rect.bottom >= offset) {
-          setActive(`#${section.id}`)
-          return
-        }
-      }
-
-      if (window.scrollY < 120) {
-        setActive('')
-      }
-    }
-
+    const handleScroll = () => setScrolled(window.scrollY > 220)
     handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
-    <motion.header
-      className="fixed inset-x-0 top-4 z-50 flex justify-center"
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+    <header
+      className="sticky top-0 z-50 border-b backdrop-blur-md transition-all"
+      style={{
+        borderColor: scrolled ? 'var(--color-border)' : 'transparent',
+        backgroundColor: 'color-mix(in srgb, var(--color-background) 85%, transparent)',
+      }}
     >
-      <div className="flex w-full max-w-5xl items-center justify-between rounded-full border border-dusk/10 bg-canvas/90 px-6 py-3 shadow-subtle backdrop-blur">
-        <nav className="hidden gap-2 text-sm sm:flex">
-          {navItems.map((item) => {
-            const isActive = active === item.target
-            return (
-              <a
-                key={item.target}
-                href={item.target}
-                className="group relative rounded-full px-4 py-2 font-medium text-dusk/70 transition hover:text-dusk"
-              >
-                {isActive && (
-                  <motion.span
-                    layoutId="nav-pill"
-                    className="absolute inset-0 rounded-full bg-mist/60"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
-                <span className="relative z-10">{item.label}</span>
-              </a>
-            )
-          })}
-        </nav>
-        <div className="flex items-center gap-2">
+      <nav className="relative mx-auto flex max-w-content items-center px-5 py-4">
+        {/* Left */}
+        <div className="flex items-center gap-6">
           <a
-            href="https://www.linkedin.com/in/brayden-thompson"
+            href="#background"
+            className="text-sm transition-colors"
+            style={{ color: 'var(--color-text-secondary)' }}
+          >
+            Background
+          </a>
+          <a
+            href="https://www.linkedin.com/in/brayden-thompson/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-dusk/15 p-2 text-dusk/70 transition hover:border-dusk/40 hover:text-dusk"
-            aria-label="LinkedIn"
+            className="text-sm transition-colors"
+            style={{ color: 'var(--color-text-secondary)' }}
           >
-            <Linkedin className="h-4 w-4" />
+            Linkedin
           </a>
+        </div>
+
+        {/* Center — avatar + name, fades in on scroll */}
+        <div
+          className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 transition-all duration-300"
+          style={{ opacity: scrolled ? 1 : 0, pointerEvents: scrolled ? 'auto' : 'none' }}
+        >
+          <img
+            src={headshot}
+            alt="Profile"
+            className="h-6 w-6 rounded-full object-cover"
+          />
+          <span className="text-sm font-semibold" style={{ color: 'var(--color-text-primary)' }}>
+            Brayden Thompson
+          </span>
+        </div>
+
+        {/* Right */}
+        <div className="ml-auto flex items-center gap-6">
           <a
             href="https://github.com/bthomp89"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-dusk/15 p-2 text-dusk/70 transition hover:border-dusk/40 hover:text-dusk"
-            aria-label="GitHub"
+            className="text-sm transition-colors"
+            style={{ color: 'var(--color-text-secondary)' }}
           >
-            <Github className="h-4 w-4" />
+            GitHub
           </a>
           <a
-            href="mailto:brdthompson02@gmail.com"
-            className="inline-flex items-center justify-center rounded-full border border-dusk/15 p-2 text-dusk/70 transition hover:border-dusk/40 hover:text-dusk"
-            aria-label="Email"
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm transition-colors"
+            style={{ color: 'var(--color-text-secondary)' }}
           >
-            <Mail className="h-4 w-4" />
+            Resume
           </a>
+          <button
+            onClick={onToggle}
+            aria-label="Toggle theme"
+            className="transition-colors"
+            style={{ color: 'var(--color-text-secondary)' }}
+          >
+            {dark ? <Sun size={15} strokeWidth={1.8} /> : <Moon size={15} strokeWidth={1.8} />}
+          </button>
         </div>
-      </div>
-    </motion.header>
+      </nav>
+    </header>
   )
 }
-
