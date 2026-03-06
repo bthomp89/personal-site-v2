@@ -1,9 +1,15 @@
+import western from '../assets/western_eng_new.png'
+import canadianTire from '../assets/canadian-tire-fs.jpg'
+import ibm from '../assets/ibm.jpeg'
+import manulife from '../assets/manulife.png'
+import mosaic from '../assets/mosaic.png'
+
 const LOGOS = [
-  { name: 'Western',          file: '/western_eng_new.png',  height: 40,  href: 'https://www.linkedin.com/school/westernueng/' },
-  { name: 'Canadian Tire FS', file: '/canadian-tire-fs.jpg', height: 40,  href: 'https://www.linkedin.com/company/canadian-tire-financial-services/' },
-  { name: 'IBM',              file: '/ibm.jpeg',             height: 40,  href: 'https://www.linkedin.com/company/ibm/' },
-  { name: 'Manulife',         file: '/manulife.png',         height: 40,  href: 'https://www.linkedin.com/company/manulife-financial/' },
-  { name: 'Ask-AI',           file: '/mosaic.png',           height: 90,  href: 'https://www.linkedin.com/company/mosaic-by-ask-ai/' },
+  { name: 'Western',          file: western,      height: 40,  href: 'https://www.linkedin.com/school/westernueng/' },
+  { name: 'Canadian Tire FS', file: canadianTire, height: 40,  href: 'https://www.linkedin.com/company/canadian-tire-financial-services/' },
+  { name: 'IBM',              file: ibm,          height: 40,  href: 'https://www.linkedin.com/company/ibm/' },
+  { name: 'Manulife',         file: manulife,     height: 40,  href: 'https://www.linkedin.com/company/manulife-financial/' },
+  { name: 'Ask-AI',           file: mosaic,       height: 90,  href: 'https://www.linkedin.com/company/mosaic-by-ask-ai/' },
 ]
 
 export function Marquee() {

@@ -1,27 +1,27 @@
 const projects = [
   {
-    title: 'Project One',
-    description: 'A short description of what this project does and the problem it solves.',
-    tags: ['React', 'TypeScript', 'Node.js'],
-    href: null,
+    title: 'NFL Betting Aid Application',
+    description: 'NFL spread predictor and historical data viewer to help predict games and leverage past analytical data for player props.',
+    tags: ['React', 'SQL', 'Node.js'],
+    href: 'https://github.com/bthomp89/BET-3309',
   },
   {
-    title: 'Project Two',
-    description: 'A short description of what this project does and the problem it solves.',
-    tags: ['Python', 'PostgreSQL', 'AWS'],
-    href: null,
+    title: 'QA Coaching Agent',
+    description: 'AI-powered agent that reviews customer support conversations and provides structured coaching feedback to improve QA workflows.',
+    tags: ['TypeScript', 'OpenAI', 'AI Agents'],
+    href: 'https://github.com/bthomp89/qa-coaching-agent',
   },
   {
-    title: 'Project Three',
-    description: 'A short description of what this project does and the problem it solves.',
-    tags: ['Go', 'Kubernetes', 'GCP'],
-    href: null,
+    title: 'DailyBytes',
+    description: 'Personalized audio podcast generator. Users select their interests and receive a custom daily podcast delivered to their inbox every morning, powered by AI summarization and text-to-speech.',
+    tags: ['React', 'Node.js', 'TypeScript', 'OpenAI', 'TTS'],
+    href: 'https://github.com/tarazoelee/capstone',
   },
   {
-    title: 'Project Four',
-    description: 'A short description of what this project does and the problem it solves.',
-    tags: ['Swift', 'iOS', 'Firebase'],
-    href: null,
+    title: 'Turbo Kart Dash Racer',
+    description: 'Subway Surfers meets Mario Kart. A single-player endless runner with a kart racing theme. Dodge obstacles, collect power-ups, and survive as long as you can.',
+    tags: ['C#', 'Unity', 'Game Dev'],
+    href: 'https://github.com/bthomp89/turbo-kart-dash-racer-game',
   },
 ]
 
