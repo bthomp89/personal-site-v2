@@ -38,12 +38,12 @@ export function Hero() {
             />
           </div>
 
-          {/* yo waddup badge */}
+          {/* welcome badge */}
           <div
             className="absolute bottom-4 right-0 translate-x-4 rounded-full px-3 py-1.5 text-sm font-semibold shadow-md"
             style={{ backgroundColor: '#FF5A00', color: '#fff' }}
           >
-            yo waddup?
+            hey, welcome to my website
           </div>
         </div>
       </div>

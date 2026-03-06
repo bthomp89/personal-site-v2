@@ -1,13 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Moon, Sun } from 'lucide-react'
 import headshot from '../assets/headshot.jpg'
 
-interface Props {
-  dark: boolean
-  onToggle: () => void
-}
-
-export function Navigation({ dark, onToggle }: Props) {
+export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -81,14 +75,6 @@ export function Navigation({ dark, onToggle }: Props) {
           >
             Resume
           </a>
-          <button
-            onClick={onToggle}
-            aria-label="Toggle theme"
-            className="transition-colors"
-            style={{ color: 'var(--color-text-secondary)' }}
-          >
-            {dark ? <Sun size={15} strokeWidth={1.8} /> : <Moon size={15} strokeWidth={1.8} />}
-          </button>
         </div>
       </nav>
     </header>

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { Navigation } from './components/Navigation'
 import { Hero } from './components/Hero'
 import { Marquee } from './components/Marquee'
@@ -9,25 +8,6 @@ import { Background } from './components/Background'
 import { Footer } from './components/Footer'
 
 function App() {
-  const [dark, setDark] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('theme')
-      if (stored) return stored === 'dark'
-      return window.matchMedia('(prefers-color-scheme: dark)').matches
-    }
-    return false
-  })
-
-  useEffect(() => {
-    if (dark) {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
-    }
-  }, [dark])
-
   return (
     <>
       <a
@@ -36,7 +16,7 @@ function App() {
       >
         Skip to content
       </a>
-      <Navigation dark={dark} onToggle={() => setDark((d) => !d)} />
+      <Navigation />
       <main id="main-content">
         <Hero />
         <Marquee />

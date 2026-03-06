@@ -2,7 +2,6 @@ const experience = [
   {
     company: 'Ask-AI',
     role: 'Solutions Engineer',
-    type: 'Full-time',
     period: 'Mar 2026 — Present',
     description:
       'Owning the full customer lifecycle at an Enterprise AI platform — running pre-sale POVs, leading technical onboarding, configuring AI workflows and integrations, and driving adoption and expansion outcomes. Working at the intersection of AI and real production deployment for GTM and CX teams in modern B2B SaaS.',
@@ -10,7 +9,6 @@ const experience = [
   {
     company: 'Manulife',
     role: 'Full-Stack Software Engineer',
-    type: 'Full-time',
     period: 'Jun 2024 — Mar 2026',
     description:
       'Worked across Member Experience (Strategy & Transformation), Partner Integrations (Health Platform), and Group Benefits (Core) — building systems that served millions of plan members.',
@@ -18,7 +16,6 @@ const experience = [
   {
     company: 'IBM',
     role: 'Consultant',
-    type: 'Internship',
     period: 'Sep 2023 — Dec 2023',
     description:
       'Pro Bono Consulting Initiative — delivered strategic consulting for non-profit organizations alongside cross-functional IBM teams.',
@@ -26,7 +23,6 @@ const experience = [
   {
     company: 'Canadian Tire Financial Services',
     role: 'Software Engineer',
-    type: 'Internship',
     period: 'May 2023 — Aug 2023',
     description:
       'Payment Processing Delivery — shipped features to production on core payment infrastructure used by millions of cardholders.',
@@ -34,7 +30,6 @@ const experience = [
   {
     company: 'Canadian Tire Financial Services',
     role: 'Software Engineer',
-    type: 'Internship',
     period: 'May 2022 — Aug 2022',
     description:
       'Payment Processing Delivery — first industry exposure to large-scale financial systems, contributing to backend payment processing pipelines.',
@@ -44,7 +39,6 @@ const experience = [
 const education = {
   school: 'Western University',
   degree: 'Bachelor of Engineering — Software Engineering',
-  period: '2020 — 2024',
   gpa: '3.9',
   awards: [
     'Nortel Networks Scholarship of Distinction in Engineering Science',
@@ -86,15 +80,11 @@ function Row({
   title,
   subtitle,
   description,
-  tag,
-  highlight,
 }: {
   period: string
   title: string
   subtitle?: string
   description: string
-  tag?: string
-  highlight?: boolean
 }) {
   return (
     <div
@@ -112,27 +102,8 @@ function Row({
             {title}
           </p>
           {subtitle && (
-            <span className="text-sm" style={{ color: highlight ? 'var(--color-text-primary)' : 'var(--color-text-secondary)' }}>
+            <span className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
               · {subtitle}
-            </span>
-          )}
-          {highlight && (
-            <span
-              className="rounded-full px-2 py-0.5 text-[10px] font-semibold"
-              style={{ backgroundColor: '#FF5A0020', color: '#FF5A00' }}
-            >
-              New
-            </span>
-          )}
-          {tag && !highlight && (
-            <span
-              className="rounded-full px-2 py-0.5 text-[10px] font-medium"
-              style={{
-                backgroundColor: 'var(--color-border-faint)',
-                color: 'var(--color-text-secondary)',
-              }}
-            >
-              {tag}
             </span>
           )}
         </div>
@@ -162,8 +133,6 @@ export function Background() {
             title={role.role}
             subtitle={role.company}
             description={role.description}
-            tag={role.type === 'Internship' ? 'Internship' : undefined}
-            highlight={i === 0}
           />
         ))}
       </div>
@@ -177,11 +146,7 @@ export function Background() {
       </h2>
       <div className="flex flex-col mb-16">
         <div className="flex flex-col gap-1 md:flex-row md:gap-10 pb-8">
-          <div className="md:w-40 shrink-0">
-            <p className="text-xs" style={{ color: 'var(--color-text-secondary)' }}>
-              {education.period}
-            </p>
-          </div>
+          <div className="md:w-40 shrink-0" />
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-2 flex-wrap">
               <p className="text-sm font-semibold" style={{ color: 'var(--color-text-primary)' }}>

@@ -6,8 +6,8 @@ const races = [
     date: 'Oct 2025',
     location: 'Toronto, ON',
     time: '1:13:48',
-    overall: '#258 / 1,042',
-    ageGroup: '#19 AG (16–24)',
+    overall: null,
+    ageGroup: null,
     href: 'https://www.hyresult.com/result/LR3MS4JI3DB2BC?tab=totals',
     accent: '#FF0035',
     bg: '#0a0a0a',
@@ -19,7 +19,7 @@ const races = [
     distance: '70.3 mi · 113 km',
     date: 'Jul 6, 2025',
     location: 'Huntsville, ON',
-    time: null,
+    time: '5:54:16',
     overall: null,
     ageGroup: null,
     href: 'https://sportstats.one/event/763/leaderboard/144092?focus=972&type=pid',
@@ -33,7 +33,7 @@ const races = [
     distance: '21.1 km',
     date: 'Oct 26, 2025',
     location: 'Niagara Falls, ON',
-    time: null,
+    time: '1:27:48',
     overall: null,
     ageGroup: null,
     href: 'https://sportstats.one/event/1066/leaderboard/144823?focus=3086&type=pid',
@@ -47,7 +47,7 @@ const races = [
     distance: 'Sprint',
     date: 'Jun 21, 2025',
     location: 'Welland, ON',
-    time: null,
+    time: '1:23:38',
     overall: null,
     ageGroup: null,
     href: 'https://sportstats.one/event/1038/leaderboard/143566?focus=993&type=pid',
@@ -128,9 +128,11 @@ export function Races() {
                     <p className="text-2xl font-bold tabular-nums" style={{ color: race.accent }}>
                       {race.time}
                     </p>
-                    <p className="text-[11px]" style={{ color: race.textColor, opacity: 0.5 }}>
-                      {race.overall} · {race.ageGroup}
-                    </p>
+                    {(race.overall || race.ageGroup) && (
+                      <p className="text-[11px]" style={{ color: race.textColor, opacity: 0.5 }}>
+                        {[race.overall, race.ageGroup].filter(Boolean).join(' · ')}
+                      </p>
+                    )}
                   </>
                 ) : (
                   <p className="text-sm font-medium" style={{ color: race.textColor, opacity: 0.6 }}>
