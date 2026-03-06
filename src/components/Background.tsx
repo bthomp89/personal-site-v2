@@ -55,32 +55,6 @@ const education = {
   activities: 'Western Developers Society · Engineers Without Borders · Western Engineering Hockey Team',
 }
 
-const volunteering = [
-  {
-    org: 'Western Developers Society',
-    role: 'Head of Product Management',
-    period: 'Feb 2023 — Apr 2024',
-    description: 'Led product strategy and roadmap for student-built software projects across the organization.',
-  },
-  {
-    org: 'Western Developers Society',
-    role: 'Development Team Lead',
-    period: 'Oct 2022 — Feb 2023',
-    description: 'Led a team of student developers building internal tooling and external-facing products.',
-  },
-  {
-    org: 'Kids Being Kids',
-    role: 'Vice President of Partnerships',
-    period: 'Sep 2022 — Present',
-    description: 'Securing partnerships and sponsorships to fund programs that support children in need.',
-  },
-  {
-    org: 'Engineers Without Borders — Western University',
-    role: 'Frontend Developer',
-    period: 'Sep 2021 — Apr 2022',
-    description: 'Built and maintained frontend features for EWB chapter initiatives.',
-  },
-]
 
 function Row({
   period,

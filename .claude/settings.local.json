@@ -6,7 +6,8 @@
       "WebFetch(domain:www.linkedin.com)",
       "WebFetch(domain:www.hyresult.com)",
       "WebFetch(domain:sportstats.one)",
-      "WebFetch(domain:www.instagram.com)"
+      "WebFetch(domain:www.instagram.com)",
+      "Bash(npm run build)"
     ]
   }
 }
