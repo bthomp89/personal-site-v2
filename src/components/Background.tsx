@@ -14,6 +14,13 @@ const experience = [
       'Worked across Member Experience (Strategy & Transformation), Partner Integrations (Health Platform), and Group Benefits (Core) — building systems that served millions of plan members.',
   },
   {
+    company: 'PGCWI',
+    role: 'Software Engineer',
+    period: 'Jun 2025 — Mar 2026',
+    description:
+      'Built full-stack tooling for a sports tech platform — shipping features across database visualization, SVG kerning automation for jersey production, operational dashboards, and performance optimization.',
+  },
+  {
     company: 'IBM',
     role: 'Consultant',
     period: 'Sep 2023 — Dec 2023',
@@ -88,29 +95,25 @@ function Row({
 }) {
   return (
     <div
-      className="flex flex-col gap-1 md:flex-row md:gap-10 pb-8 border-b last:border-b-0"
+      className="grid grid-cols-1 md:grid-cols-[160px_200px_1fr] gap-y-1 md:gap-x-8 py-7 border-b last:border-b-0"
       style={{ borderColor: 'var(--color-border-faint)' }}
     >
-      <div className="md:w-40 shrink-0">
-        <p className="text-xs" style={{ color: 'var(--color-text-secondary)' }}>
-          {period}
+      <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
+        {period}
+      </p>
+      <div>
+        <p className="text-sm font-semibold" style={{ color: 'var(--color-text-primary)' }}>
+          {title}
         </p>
-      </div>
-      <div className="flex flex-col gap-1.5">
-        <div className="flex items-center gap-2 flex-wrap">
-          <p className="text-sm font-semibold" style={{ color: 'var(--color-text-primary)' }}>
-            {title}
+        {subtitle && (
+          <p className="text-sm mt-0.5" style={{ color: 'var(--color-text-secondary)' }}>
+            {subtitle}
           </p>
-          {subtitle && (
-            <span className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
-              · {subtitle}
-            </span>
-          )}
-        </div>
-        <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
-          {description}
-        </p>
+        )}
       </div>
+      <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+        {description}
+      </p>
     </div>
   )
 }
@@ -118,81 +121,66 @@ function Row({
 export function Background() {
   return (
     <section id="background" className="mx-auto max-w-content px-5 py-16">
-      {/* Experience */}
       <h2
-        className="text-xs font-semibold uppercase tracking-widest mb-8"
-        style={{ color: 'var(--color-text-secondary)' }}
+        className="text-4xl md:text-5xl font-bold tracking-tight mb-12"
+        style={{ color: 'var(--color-text-primary)' }}
       >
-        Experience
+        Background
       </h2>
-      <div className="flex flex-col mb-16">
+
+      {/* Experience */}
+      <div className="flex flex-col">
+        <p
+          className="text-xs font-semibold uppercase tracking-widest mb-6"
+          style={{ color: 'var(--color-text-secondary)' }}
+        >
+          Work Experience
+        </p>
         {experience.map((role, i) => (
           <Row
             key={i}
             period={role.period}
-            title={role.role}
-            subtitle={role.company}
+            title={role.company}
+            subtitle={role.role}
             description={role.description}
           />
         ))}
       </div>
 
       {/* Education */}
-      <h2
-        className="text-xs font-semibold uppercase tracking-widest mb-8"
-        style={{ color: 'var(--color-text-secondary)' }}
-      >
-        Education
-      </h2>
-      <div className="flex flex-col mb-16">
-        <div className="flex flex-col gap-1 md:flex-row md:gap-10 pb-8">
-          <div className="md:w-40 shrink-0" />
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2 flex-wrap">
-              <p className="text-sm font-semibold" style={{ color: 'var(--color-text-primary)' }}>
-                {education.degree}
-              </p>
-              <span className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
-                · {education.school}
-              </span>
-              <span
-                className="rounded-full px-2 py-0.5 text-[10px] font-medium"
-                style={{ backgroundColor: 'var(--color-border-faint)', color: 'var(--color-text-secondary)' }}
-              >
-                GPA {education.gpa}
-              </span>
-            </div>
-            <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
+      <div className="flex flex-col mt-16">
+        <p
+          className="text-xs font-semibold uppercase tracking-widest mb-6"
+          style={{ color: 'var(--color-text-secondary)' }}
+        >
+          Education
+        </p>
+        <div
+          className="grid grid-cols-1 md:grid-cols-[160px_200px_1fr] gap-y-1 md:gap-x-8 py-7 border-b"
+          style={{ borderColor: 'var(--color-border-faint)' }}
+        >
+          <div />
+          <div>
+            <p className="text-sm font-semibold" style={{ color: 'var(--color-text-primary)' }}>
+              {education.school}
+            </p>
+            <p className="text-sm mt-0.5" style={{ color: 'var(--color-text-secondary)' }}>
+              {education.degree}
+            </p>
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
               {education.activities}
             </p>
-            <div className="flex flex-col gap-0.5 mt-1">
+            <div className="flex flex-col gap-0.5">
               {education.awards.map((award) => (
-                <p key={award} className="text-xs" style={{ color: 'var(--color-text-secondary)', opacity: 0.7 }}>
+                <p key={award} className="text-sm" style={{ color: 'var(--color-text-secondary)', opacity: 0.7 }}>
                   · {award}
                 </p>
               ))}
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Volunteering */}
-      <h2
-        className="text-xs font-semibold uppercase tracking-widest mb-8"
-        style={{ color: 'var(--color-text-secondary)' }}
-      >
-        Volunteering
-      </h2>
-      <div className="flex flex-col">
-        {volunteering.map((v, i) => (
-          <Row
-            key={i}
-            period={v.period}
-            title={v.role}
-            subtitle={v.org}
-            description={v.description}
-          />
-        ))}
       </div>
     </section>
   )

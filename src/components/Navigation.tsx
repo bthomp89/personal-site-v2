@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import headshot from '../assets/headshot.jpg'
+import resumePdf from '../assets/resume/Brayden_Thompson_Resume.pdf'
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
@@ -67,7 +68,7 @@ export function Navigation() {
             GitHub
           </a>
           <a
-            href="/resume.pdf"
+            href={resumePdf}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm transition-colors"
