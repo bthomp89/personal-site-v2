@@ -51,7 +51,7 @@ export function Navigation() {
             alt="Profile"
             className="h-6 w-6 rounded-full object-cover"
           />
-          <span className="text-sm font-semibold" style={{ color: 'var(--color-text-primary)' }}>
+          <span className="hidden sm:block text-sm font-semibold" style={{ color: 'var(--color-text-primary)' }}>
             Brayden Thompson
           </span>
         </div>
