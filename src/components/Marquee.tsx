@@ -6,12 +6,12 @@ import pgcwi from '../assets/pgcwi.png'
 import mosaic from '../assets/mosaic.png'
 
 const LOGOS = [
-  { name: 'Western',          file: western,      height: 40,  href: 'https://www.linkedin.com/school/westernueng/' },
-  { name: 'Canadian Tire FS', file: canadianTire, height: 40,  href: 'https://www.linkedin.com/company/canadian-tire-financial-services/' },
-  { name: 'IBM',              file: ibm,          height: 40,  href: 'https://www.linkedin.com/company/ibm/' },
-  { name: 'Manulife',         file: manulife,     height: 40,  href: 'https://www.linkedin.com/company/manulife-financial/' },
+  { name: 'Western',          file: western,      height: 40,  href: 'https://www.eng.uwo.ca/index.html' },
+  { name: 'Canadian Tire FS', file: canadianTire, height: 40,  href: 'https://www.ctfs.com/content/ctfs3/en/homepage.html' },
+  { name: 'IBM',              file: ibm,          height: 40,  href: 'https://www.ibm.com/ca-en' },
+  { name: 'Manulife',         file: manulife,     height: 40,  href: 'https://www.manulife.ca/personal.html' },
   { name: 'PGCWI',            file: pgcwi,        height: 40,  href: 'https://www.pgcwi.com/' },
-  { name: 'Ask-AI',           file: mosaic,       height: 90,  href: 'https://www.linkedin.com/company/mosaic-by-ask-ai/' },
+  { name: 'Ask-AI',           file: mosaic,       height: 90,  href: 'https://getmosaic.ai/' },
 ]
 
 export function Marquee() {
