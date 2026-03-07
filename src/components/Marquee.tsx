@@ -6,12 +6,12 @@ import pgcwi from '../assets/pgcwi.png'
 import mosaic from '../assets/mosaic.png'
 
 const LOGOS = [
-  { name: 'Western',          file: western,      height: 40,  href: 'https://www.eng.uwo.ca/index.html' },
-  { name: 'Canadian Tire FS', file: canadianTire, height: 40,  href: 'https://www.ctfs.com/content/ctfs3/en/homepage.html' },
-  { name: 'IBM',              file: ibm,          height: 40,  href: 'https://www.ibm.com/ca-en' },
-  { name: 'Manulife',         file: manulife,     height: 40,  href: 'https://www.manulife.ca/personal.html' },
-  { name: 'PGCWI',            file: pgcwi,        height: 40,  href: 'https://www.pgcwi.com/' },
-  { name: 'Ask-AI',           file: mosaic,       height: 40,  href: 'https://getmosaic.ai/' },
+  { name: 'Western',          file: western,      height: 40,  href: 'https://www.eng.uwo.ca/index.html',                          mobileHidden: false },
+  { name: 'Canadian Tire FS', file: canadianTire, height: 40,  href: 'https://www.ctfs.com/content/ctfs3/en/homepage.html',        mobileHidden: true  },
+  { name: 'IBM',              file: ibm,          height: 40,  href: 'https://www.ibm.com/ca-en',                                  mobileHidden: true  },
+  { name: 'Manulife',         file: manulife,     height: 40,  href: 'https://www.manulife.ca/personal.html',                      mobileHidden: false },
+  { name: 'PGCWI',            file: pgcwi,        height: 40,  href: 'https://www.pgcwi.com/',                                     mobileHidden: true  },
+  { name: 'Ask-AI',           file: mosaic,       height: 40,  href: 'https://getmosaic.ai/',                                      mobileHidden: false },
 ]
 
 export function Marquee() {
@@ -20,14 +20,14 @@ export function Marquee() {
       className="border-y py-4"
       style={{ borderColor: 'var(--color-border-faint)' }}
     >
-      <div className="mx-auto flex max-w-content items-center gap-6 overflow-x-auto px-5 scrollbar-hide">
+      <div className="mx-auto flex max-w-content items-center justify-between px-5">
         {LOGOS.map((logo) => (
           <a
             key={logo.name}
             href={logo.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex shrink-0 items-center justify-center transition-opacity hover:opacity-75"
+            className={`${logo.mobileHidden ? 'hidden sm:flex' : 'flex'} shrink-0 items-center justify-center transition-opacity hover:opacity-75`}
             style={{ width: '100px', height: '60px' }}
           >
             <img
