@@ -18,7 +18,7 @@ const experience = [
     role: 'Software Engineer',
     period: 'Jun 2025 — Mar 2026',
     description:
-      'Built full-stack tooling for a sports tech platform — shipping features across database visualization, SVG kerning automation for jersey production, operational dashboards, and performance optimization.',
+      'Built full-stack features for a warehouse management system used by Avery Dennison facilities producing licensed sportswear — including database visualization tooling, SVG kerning automation for garment production, operational request dashboards, and performance optimization across the platform.',
   },
   {
     company: 'IBM',
